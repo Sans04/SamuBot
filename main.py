@@ -3,7 +3,7 @@ import asyncio
 
 
 client = discord.Client()
-DEIN_USERNAME = "deine_user_id"
+DEIN_USERNAME = "NICHT" + "<:yay:450746929702371328>"
 
 
 minutes = 0
