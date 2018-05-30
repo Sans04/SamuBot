@@ -26,10 +26,11 @@ async def on_message(message):
 
     if message.author.name == "alex-botxd":
         if message.content.lower().startswith("witz des tages"):
-            await client.add_reaction(botmsg, "👍")
+            await client.add_reaction(message, "👍")
             await client.send_message(message.channel, "LUSTIG")
-        asyncio.sleep(2)
+            asyncio.sleep(2)
             await client.send_message(message.channel, "NICHT" + ":yay:")
+
         
 
 
