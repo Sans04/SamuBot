@@ -1,43 +1,47 @@
 import discord
 import asyncio
-
+import random
+import requests
+import io
 
 client = discord.Client()
-testmsgid = None
-testmsguser = None
+DEIN_NAME_ID= "DEINE_USER_ID"
 
+minutes = 0
+hour = 0
 
 @client.event
 async def on_ready():
+    print('Eingeloggt als')
     print(client.user.name)
-    print("========")
-    await client.change_presence(game=discord.Game(name="music"))
+    print(client.user.id)
+    print('-----------')
+    await client.change_presence(game=discord.Game(name="SansBot"))
 
 
 @client.event
 async def on_message(message):
-    if message.content.lower().startswith("hi"):
-        await client.send_message(message.channel, "heyy")
+    if message.content.lower().startswith('?test'):
+        await client.send_message(message.channel, "Test bestanden")
+
+    if message.content.lower().startswith('?coin'): #Coinflip 50/50% chance kopf oder zahl
+        choice = random.randint(1,2)
+        if choice == 1:
+            await client.add_reaction(message, '🌑')
+        if choice == 2:
+            await client.add_reaction(message, '🌕')
+
+    if message.content.startswith('?game') and message.author.id == DEIN_NAME_ID:
+        game = message.content[6:]
+        await client.change_presence(game=discord.Game(name=game))
+        await client.send_message(message.channel, "Ich habe meinen Status zu {0} geaendert".format(game))
+
+    if message.content.startswith('?bild'):
+        response = requests.get("https://cdn.pixabay.com/photo/2017/04/11/21/34/giraffe-2222908_960_720.jpg", stream=True)
+        await client.send_file(message.channel, io.BytesIO(response.raw.read()), filename='bild.gif', content='Test Bild.')
 
     if message.content.startswith('?uptime'):
-        await client.send_message(message.channel, "`Ich bin schon {0} Stunde/n und {1} Minuten online auf {2}. `".format(hour, minutes, message.server))
-
-
-    if message.content.lower().startswith("?Abstimmung"):
-        botmsg = await client.send_message(message.channel, "Ok")
-
-        await client.add_reaction(botmsg, "👍")
-        await client.add_reaction(botmsg, "👎")
-
-        global testmsgid
-        testmsgid = botmsg.id
-
-        global testmsguser
-        testmsguser = message.author
-
-
-
-
+        await client.send_message(message.channel, "`Ich bin schon {0} stunde/n und {1} minuten online auf {2}. `".format(hour, minutes, message.server))
 
 async def tutorial_uptime():
     await client.wait_until_ready()
@@ -53,8 +57,5 @@ async def tutorial_uptime():
             hour += 1
 
 client.loop.create_task(tutorial_uptime())
-
-
-
 
 client.run('NDA3OTU0MzU2NjAwODMyMDAx.De7jRQ.vix8RqmAlnPCME1PTbcnp3fg1E0')
