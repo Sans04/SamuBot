@@ -1,11 +1,9 @@
 import discord
 import asyncio
 
-client = discord.Client()
-DEIN_NAME_ID= "DEINE_USER_ID"
 
-minutes = 0
-hour = 0
+client = discord.Client()
+DEIN_USERNAME = "deine_user_id"
 
 @client.event
 async def on_ready():
@@ -13,17 +11,13 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('-----------')
-    await client.change_presence(game=discord.Game(name="SansBot"))
+    await client.change_presence(game=discord.Game(name="Sans"))
 
 
 @client.event
 async def on_message(message):
     if message.content.lower().startswith('?test'):
         await client.send_message(message.channel, "Test bestanden")
-    if message.content.lower().startswith('hi'):
-        await client.send_message(message.channel, "heyy")
-
- 
     if message.content.startswith('?uptime'):
         await client.send_message(message.channel, "`Ich bin schon {0} stunde/n und {1} minuten online auf {2}. `".format(hour, minutes, message.server))
 
@@ -41,5 +35,6 @@ async def tutorial_uptime():
             hour += 1
 
 client.loop.create_task(tutorial_uptime())
+
 
 client.run('NDA3OTU0MzU2NjAwODMyMDAx.De7jRQ.vix8RqmAlnPCME1PTbcnp3fg1E0')
