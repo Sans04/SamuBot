@@ -37,7 +37,47 @@ async def on_message(message):
  
     if message.content.startswith('?uptime'):
         await client.send_message(message.channel, "`Ich bin schon {0} stunde/n und {1} minuten online auf {2}. `".format(hour, minutes, message.server))
-
+ 
+    if message.content.startswith('?user'):
+        try:
+            user = message.mentions[0]
+            userjoinedat = str(user.joined_at).split('.', 1)[0]
+            usercreatedat = str(user.created_at).split('.', 1)[0]
+ 
+            userembed = discord.Embed(
+                title="Username:",
+                description=user.name,
+                color=0xe67e22
+            )
+            userembed.set_author(
+                name="User Info"
+            )
+            userembed.add_field(
+                name="Joined the server at:",
+                value=userjoinedat
+            )
+            userembed.add_field(
+                name="User Created at:",
+                value=usercreatedat
+            )
+            userembed.add_field(
+                name="Discriminator:",
+                value=user.discriminator
+            )
+            userembed.add_field(
+                name="User ID:",
+                value=user.id
+            )
+ 
+            await client.send_message(message.channel, embed=userembed)
+        except IndexError:
+            await client.send_message(message.channel, "Ich konnte den User nicht finden.")
+        except:
+            await client.send_message(message.channel, "Sorry Error")
+        finally:
+            pass
+ 
+ 
 
         
 async def tutorial_uptime():
