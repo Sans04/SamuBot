@@ -3,7 +3,7 @@ import asyncio
 
 
 client = discord.Client()
-DEIN_USERNAME = "NICHT" + "<:yay:450746929702371328>"
+DEIN_NAME_ID= "DEINE_USER_ID"
 
 
 minutes = 0
@@ -17,7 +17,7 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('-----------')
-    await client.change_presence(game=discord.Game(name="Sans"))
+    await client.change_presence(game=discord.Game(name="SansBar" + "<:yay:450746929702371328>"))
 
 
 @client.event
