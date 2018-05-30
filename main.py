@@ -40,12 +40,12 @@ async def on_message(message):
 
     if message.content.lower().startswith('?embed'):
         embed = discord.Embed(
-            title="Commands",
+            title="Hallo World",
             color=0xe67e22,
-            description="lool0"
-                        "lool1"
-                        "lool2"
-                        "lool3"
+            description="guten tag welt adjkhfg iadsfgjkadsh gjkahdfbg adfg\n"
+                        "yhuasdghasd\n"
+                        "guten\n"
+                        "tag"
         )
         embed.set_author(
             name="Bobo",
@@ -79,7 +79,6 @@ async def on_message(message):
         )
 
         await client.send_message(message.channel, embed=embed)
-        
         
 async def tutorial_uptime():
     await client.wait_until_ready()
