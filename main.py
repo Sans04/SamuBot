@@ -20,6 +20,21 @@ async def on_ready():
 async def on_message(message):
     if message.content.lower().startswith('?test'):
         await client.send_message(message.channel, "Test bestanden")
+    if message.content.lower().startswith('hi'):
+        await client.send_message(message.channel, "heyy")
+    if message.author.name == "alex-botxd":
+    if message.content.lower().startswith("Witz des Tages"):
+        await client.add_reaction(botmsg, "👍")
+        await client.send_message(message.channel, "LUSTIG")
+        asyncio.sleep(2)
+       
+        await client.send_message(message.channel, "NICHT" + ":yay:")
+        
+        global testmsgid
+        testmsgid = botmsg.id
+
+        global testmsguser
+        testmsguser = message.author
 
  
     if message.content.startswith('?uptime'):
