@@ -5,8 +5,7 @@ import asyncio
 client = discord.Client()
 DEIN_USERNAME = "deine_user_id"
 
-minutes = 0
-hour = 0
+
 
 @client.event
 async def on_ready():
@@ -23,22 +22,15 @@ async def on_message(message):
         await client.send_message(message.channel, "Test bestanden")
     if message.content.lower().startswith('hi'):
         await client.send_message(message.channel, "heyy")
-    if message.content.startswith('?uptime'):
-        await client.send_message(message.channel, "`Ich bin schon {0} stunde/n und {1} minuten online auf {2}. `".format(hour, minutes, message.server))
+    
 
-async def tutorial_uptime():
-    await client.wait_until_ready()
-    global minutes
-    minutes = 0
-    global hour
-    hour = 0
-    while not client.is_closed:
-        await asyncio.sleep(60)
-        minutes += 1
-        if minutes == 60:
-            minutes = 0
-            hour += 1
+    if message.author.name == "alex-botxd":
+        if message.content.lower().startswith("witz des tages"):
+            await client.add_reaction(botmsg, "👍")
+            await client.send_message(message.channel, "LUSTIG")
+            asyncio.sleep(2)
+            await client.send_message(message.channel, "NICHT" + ":yay:")
+        
 
-client.loop.create_task(tutorial_uptime())
 
 client.run('NDA3OTU0MzU2NjAwODMyMDAx.De7jRQ.vix8RqmAlnPCME1PTbcnp3fg1E0')
