@@ -11,7 +11,7 @@ testmsguser = None
 async def on_ready():
     print(client.user.name)
     print("========")
-    await client.change_presence(game=discord.Game(name="mit yikers"))
+    await client.change_presence(game=discord.Game(name="music"))
 
 
 @client.event
