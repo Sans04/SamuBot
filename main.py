@@ -37,7 +37,7 @@ async def on_message(message):
             await client.add_reaction(message, "💤")
             
             await client.send_message(message.channel, "LUSTIG")
-            asyncio.sleep(30)
+            await asyncio.sleep(30)
             await client.send_message(message.channel, "NICHT" + "<:yay:450746929702371328>")
  
     if message.content.startswith('?uptime'):
