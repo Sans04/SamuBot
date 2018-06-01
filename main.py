@@ -28,7 +28,7 @@ async def on_message(message):
         await client.send_message(message.channel, "heyy")
     
     if message.content.lower().startswith("!meme"):
-        await asyncio.sleep(0.8)
+        await asyncio.sleep(2)
         await client.add_reaction(message, "👍")
         await client.add_reaction(message, "👎")
         await client.add_reaction(message, "🔥")
