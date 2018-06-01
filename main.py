@@ -27,7 +27,16 @@ async def on_message(message):
     if message.content.lower().startswith('hi'):
         await client.send_message(message.channel, "heyy")
     
+    if message.content.lower().startswith("!meme"):
+        await asyncio.sleep(0.8)
+        await client.add_reaction(message, "👍")
+        await client.add_reaction(message, "👎")
+        await client.add_reaction(message, "🔥")
+        await client.add_reaction(message, "💕")
+        await client.add_reaction(message, "💤")
+        await client.send_message(message.channel, "Cool!")
 
+            
     if message.author.name == "alex-botxd":
         if message.content.lower().startswith("witz des tages"):
             await client.add_reaction(message, "👍")
