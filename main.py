@@ -29,12 +29,12 @@ async def on_message(message):
     
     if message.content.lower().startswith("!meme"):
         await asyncio.sleep(2)
+        await client.send_message(message.channel, "Cool!")
         await client.add_reaction(message, "👍")
         await client.add_reaction(message, "👎")
         await client.add_reaction(message, "🔥")
         await client.add_reaction(message, "💕")
         await client.add_reaction(message, "💤")
-        await client.send_message(message.channel, "Cool!")
 
             
     if message.author.name == "alex-botxd":
@@ -52,11 +52,7 @@ async def on_message(message):
     if message.content.startswith('?uptime'):
         await client.send_message(message.channel, "`Ich bin schon {0} stunde/n und {1} minuten online auf {2}. `".format(hour, minutes, message.server))
     
-    if message.content.startwith("?commands"):
-        emb = (discord.Embed(description="Commands", colour=0x3DF270))
-        emb.set_author(name="-Commands-", icon_url='https://cdn.discordapp.com/attachments/451506798105591809/451673664631603201/HYPERLUL.png')
-        await client.send_message(message.channel, embed=emb)
-   
+  
     
     if message.content.startswith('?user'):
         try:
