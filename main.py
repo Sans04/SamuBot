@@ -107,4 +107,4 @@ client.loop.create_task(tutorial_uptime())
         
 
 
-client.run('NDA3OTU0MzU2NjAwODMyMDAx.De7jRQ.vix8RqmAlnPCME1PTbcnp3fg1E0')
+client.run('Fucking NOOB')
