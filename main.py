@@ -32,17 +32,15 @@ async def on_message(message):
         await client.send_message(message.channel, "Cool!")
 
             
-    if message.author.name == "alex-botxd":
-        if message.content.lower().startswith("witz des tages"):
-            await client.add_reaction(message, "👍")
-            await client.add_reaction(message, "👎")
-            await client.add_reaction(message, "🔥")
-            await client.add_reaction(message, "💕")
-            await client.add_reaction(message, "💤")
+    if message.author.name == "NSTY_Hendrik":
+        await client.add_reaction(message, "👍")
+        await client.add_reaction(message, "👎")
+        await client.add_reaction(message, "🔥")
+        await client.add_reaction(message, "💕")
+        await client.add_reaction(message, "💤")
+
             
-            await client.send_message(message.channel, "LUSTIG")
-            await asyncio.sleep(0.8)
-            await client.send_message(message.channel, "NICHT" + "<:yay:450746929702371328>")
+            
  
     if message.content.startswith('?uptime'):
         await client.send_message(message.channel, "`Ich bin schon {0} stunde/n und {1} minuten online auf {2}. `".format(hour, minutes, message.server))
@@ -56,19 +54,19 @@ async def on_message(message):
             usercreatedat = str(user.created_at).split('.', 1)[0]
  
             userembed = discord.Embed(
-                title="Username:",
+                title="Benutzername:",
                 description=user.name,
                 color=0xe67e22
             )
             userembed.set_author(
-                name="User Info"
+                name="Benutzerinfo:"
             )
             userembed.add_field(
-                name="Joined the server at:",
+                name="Server Beitrittsdatum:",
                 value=userjoinedat
             )
             userembed.add_field(
-                name="User Created at:",
+                name="Discord Beitrittsdatum:",
                 value=usercreatedat
             )
             userembed.add_field(
