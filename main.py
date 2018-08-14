@@ -23,13 +23,13 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if message.content.lower().startswith('rülps'):
-        await client.send_message(message.channel, "SCHULZ")
+        await client.send_message(message.channel, "```SCHULZ```")
     if message.content.lower().startswith('hi'):
         await client.send_message(message.channel, "```heyy, lust auf was hochprozentieges?```")
     
     if message.content.lower().startswith("ja"):
         await client.send_message(message.channel, "```JAWOLL```")
-        await asyncio.sleep(2)
+        await asyncio.sleep(1)
         await client.send_message(message.channel, "```LOLL```")
 
             
