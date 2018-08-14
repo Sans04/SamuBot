@@ -40,7 +40,7 @@ async def on_message(message):
         await client.add_reaction(message, "👎")
         await asyncio.sleep(8)
         await client.add_reaction(message, "🔥")
-        await client.add_reaction(message, "🍺")
+        await client.add_reaction(message, "🍻")
         await client.add_reaction(message, "💤")
 
      
