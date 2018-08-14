@@ -33,7 +33,7 @@ async def on_message(message):
         await client.send_message(message.channel, "```LOLL```")
 
             
-    if message.author.name == "[Big Daddy] Ryu":
+    if message.author.name == "ryu#0857":
         await client.add_reaction(message, "👍")
         await client.add_reaction(message, "👎")
         await client.add_reaction(message, "🔥")
