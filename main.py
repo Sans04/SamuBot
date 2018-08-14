@@ -25,12 +25,17 @@ async def on_message(message):
     if message.content.lower().startswith('rülps'):
         await client.send_message(message.channel, "```SCHULZ```")
     if message.content.lower().startswith('hi'):
-        await client.send_message(message.channel, "```heyy, lust auf was hochprozentieges?```")
-    
-    if message.content.lower().startswith("ja"):
+        await client.send_message(message.channel, "```heyy```")
+    if message.content.lower().startswith('blöd'):
+        await client.send_message(message.channel, "```Miese Prise```")
+    if message.content.lower().startswith('schade'):
+        await client.send_message(message.channel, "```Miese Prise```")
+  
+    if message.content.lower().startswith("jawoll"):
         await client.send_message(message.channel, "```JAWOLL```")
         await asyncio.sleep(1)
         await client.send_message(message.channel, "```LOLL```")
+     
 
             
     if message.author.name == "ryu#0857":
