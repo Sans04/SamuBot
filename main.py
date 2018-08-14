@@ -44,6 +44,36 @@ async def on_message(message):
         await client.add_reaction(message, "🔥")
         await client.add_reaction(message, "🍺")
         await client.add_reaction(message, "💤")
+    if message.author.name == "~Consigliere~ Sam":
+            if message.content.lower().startswith('clear'):
+                await client.delete_message(message)
+                await asyncio.sleep(0.5)
+                await client.delete_message(message)
+                await asyncio.sleep(0.5)
+                await client.delete_message(message)
+                await asyncio.sleep(0.5)
+                await client.delete_message(message)
+                await asyncio.sleep(0.5)
+                await client.delete_message(message)
+                await asyncio.sleep(0.5)
+                await client.delete_message(message)
+                await asyncio.sleep(0.5)
+                await client.delete_message(message)
+                await asyncio.sleep(0.5)
+                await client.delete_message(message)
+                await asyncio.sleep(0.5)
+                await client.delete_message(message)
+                await asyncio.sleep(0.5)
+                await client.delete_message(message)
+                await asyncio.sleep(0.5)
+                await client.delete_message(message)
+                await asyncio.sleep(0.5)
+                await client.delete_message(message)
+                await asyncio.sleep(0.5)
+                await client.delete_message(message)
+                await asyncio.sleep(0.5)
+                
+
 
             
             
