@@ -24,8 +24,7 @@ async def on_ready():
 async def on_message(message):
     if message.content.lower().startswith('rülps'):
         await client.send_message(message.channel, "```SCHULZ```")
-    if message.content.lower().startswith('hi'):
-        await client.send_message(message.channel, "```heyy```")
+
     if message.content.lower().startswith('blöd'):
         await client.send_message(message.channel, "```Miese Prise```")
     if message.content.lower().startswith('schade'):
@@ -44,7 +43,7 @@ async def on_message(message):
         await client.add_reaction(message, "🔥")
         await client.add_reaction(message, "🍺")
         await client.add_reaction(message, "💤")
-    if message.author.name == "~Consigliere~ Sam":
+    if message.author.name == "Samu#9560":
             if message.content.lower().startswith('clear'):
                 await client.delete_message(message)
                 await asyncio.sleep(0.5)
