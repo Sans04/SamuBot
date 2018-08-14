@@ -70,7 +70,7 @@ async def on_message(message):
                 color=0xe67e22
             )
             userembed.set_author(
-                name="Benutzerinfo:"
+                name="🕵️🕵️🕵️"
             )
             userembed.add_field(
                 name="Server Beitrittsdatum:",
