@@ -17,26 +17,27 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('-----------')
-    await client.change_presence(game=discord.Game(name="SansBar"))
+    await client.change_presence(game=discord.Game(name="Bierpong"))
 
 
 @client.event
 async def on_message(message):
-    if message.content.lower().startswith('?test'):
-        await client.send_message(message.channel, "Test bestanden")
+    if message.content.lower().startswith('rülps'):
+        await client.send_message(message.channel, "SCHULZ")
     if message.content.lower().startswith('hi'):
-        await client.send_message(message.channel, "heyy")
+        await client.send_message(message.channel, "```heyy, lust auf was hochprozentieges?```")
     
-    if message.content.lower().startswith("!meme"):
+    if message.content.lower().startswith("ja"):
+        await client.send_message(message.channel, "```JAWOLL```")
         await asyncio.sleep(2)
-        await client.send_message(message.channel, "Cool!")
+        await client.send_message(message.channel, "```LOLL```")
 
             
-    if message.author.name == "NSTY_Hendrik":
+    if message.author.name == "[Big Daddy] Ryu":
         await client.add_reaction(message, "👍")
         await client.add_reaction(message, "👎")
         await client.add_reaction(message, "🔥")
-        await client.add_reaction(message, "💕")
+        await client.add_reaction(message, "🍺")
         await client.add_reaction(message, "💤")
 
             
@@ -47,7 +48,7 @@ async def on_message(message):
     
   
     
-    if message.content.startswith('?user'):
+    if message.content.startswith('info'):
         try:
             user = message.mentions[0]
             userjoinedat = str(user.joined_at).split('.', 1)[0]
@@ -80,7 +81,7 @@ async def on_message(message):
  
             await client.send_message(message.channel, embed=userembed)
         except IndexError:
-            await client.send_message(message.channel, "Ich konnte den User nicht finden.")
+            await client.send_message(message.channel, "Ich konnte den Trinker nicht finden.")
         except:
             await client.send_message(message.channel, "Sorry Error")
         finally:
@@ -107,4 +108,4 @@ client.loop.create_task(tutorial_uptime())
         
 
 
-client.run('Fucking NOOB')
+client.run('NDc4OTkyMzk2MDMwNDQzNTMw.DlSy6w.FL8E2wzGT8B7pypiKujTqPuRyJw')
