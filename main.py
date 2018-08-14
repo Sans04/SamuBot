@@ -34,6 +34,15 @@ async def on_message(message):
         await asyncio.sleep(1)
         await client.send_message(message.channel, "```LOLL```")
         await client.add_reaction(message, "🍺")
+        
+    if message.content.lower().startswith("!vote"):
+        await client.add_reaction(message, "👍")
+        await client.add_reaction(message, "👎")
+        await asyncio.sleep(8)
+        await client.add_reaction(message, "🔥")
+        await client.add_reaction(message, "🍺")
+        await client.add_reaction(message, "💤")
+
      
 
             
