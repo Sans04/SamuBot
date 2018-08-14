@@ -4,15 +4,10 @@ import asyncio
 
 client = discord.Client()
 DEIN_NAME_ID= "DEINE_USER_ID"
-client = commands.Bot(command_prefix = "?")
 
 
 
-minutes = 0
-hour = 0
 
-chat_filter = ["!clear"]
-bypass_list = []
 
 
 @client.event
@@ -23,31 +18,7 @@ async def on_ready():
     print('-----------')
     await client.change_presence(game=discord.Game(name="Bierpong"))
 
-@client.event
-async def on_message(message):
-    contents = message.content.split(" ") #contents is a list type
-    for word in contents:
-        if word.upper() in chat_filter:
-            if not message.author.id in bypass_list:
-                try:
-                    await client.delete_message(message)
-                    await asyncio.sleep(1)
-                    await client.delete_message(message)
-                    await asyncio.sleep(1)
-                    await client.delete_message(message)
-                    await asyncio.sleep(1)
-                    await client.delete_message(message)
-                    await asyncio.sleep(1)
-                    await client.delete_message(message)
-                    await asyncio.sleep(1)
-                    await client.delete_message(message)
-                    await asyncio.sleep(1)
-                    await client.delete_message(message)
-                    await asyncio.sleep(1)
-                    
-                except discord.errors.NotFound:
-                    return
-                
+
 @client.event
 async def on_message(message):
     if message.content.lower().startswith('rülps'):
@@ -62,6 +33,7 @@ async def on_message(message):
         await client.send_message(message.channel, "```JAWOLL```")
         await asyncio.sleep(1)
         await client.send_message(message.channel, "```LOLL```")
+        await client.add_reaction(message, "🍺")
      
 
             
@@ -118,23 +90,7 @@ async def on_message(message):
  
  
 
-        
-async def tutorial_uptime():
-    await client.wait_until_ready()
-    global minutes
-    minutes = 0
-    global hour
-    hour = 0
-    while not client.is_closed:
-        await asyncio.sleep(60)
-        minutes += 1
-        if minutes == 60:
-            minutes = 0
-            hour += 1
 
-client.loop.create_task(tutorial_uptime())
-
-        
 
 
 client.run('NDc4OTkyMzk2MDMwNDQzNTMw.DlSy6w.FL8E2wzGT8B7pypiKujTqPuRyJw')
