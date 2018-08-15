@@ -42,7 +42,14 @@ async def on_message(message):
         await client.add_reaction(message, "🔥")
         await client.add_reaction(message, "🍻")
         await client.add_reaction(message, "💤")
+        
+    if message.content.lower().startswith("!clear"):
+        mgs = [] 
 
+        async for x in Client.logs_from(message.channel, limit = 100):
+            mgs.append(x)
+        await Client.delete_messages(mgs)
+        await client.send_message(message.channel, "MESSAGES DELETED")
      
 
             
@@ -53,8 +60,7 @@ async def on_message(message):
         await client.add_reaction(message, "🍺")
         await client.add_reaction(message, "💤")
 
-    if message.content.startswith('?uptime'):
-        await client.send_message(message.channel, "`Ich bin schon {0} stunde/n und {1} minuten online auf {2}. `".format(hour, minutes, message.server))
+   
     
   
     
