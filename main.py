@@ -1,5 +1,8 @@
 import discord
 import asyncio
+from discord.ext.commands import Bot
+
+Client = Bot('!')
 
 
 client = discord.Client()
