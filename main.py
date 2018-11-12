@@ -1,5 +1,6 @@
 import discord
 import asyncio
+import random
 from discord.ext.commands import Bot
 
 Client = Bot('!')
@@ -8,7 +9,7 @@ Client = Bot('!')
 client = discord.Client()
 DEIN_NAME_ID= "DEINE_USER_ID"
 
-jokes = ["PLAULE", "MC FLAULE"]
+
 
 
 
@@ -27,7 +28,7 @@ async def on_message(message):
     if message.content.lower().startswith('rülps'):
         await client.send_message(message.channel, "```SCHULZ```")
     if message.content.lower().startswith('Joke'):
-        await client.send_message(message.channel, choice(jokes))
+        await client.send_message(message.channel, choice(['win', 'lose', 'draw']))
     if message.content.lower().startswith('blöd'):
         await client.send_message(message.channel, "```Miese Prise```")
     if message.content.lower().startswith('schade'):
