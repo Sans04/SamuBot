@@ -8,7 +8,7 @@ Client = Bot('!')
 client = discord.Client()
 DEIN_NAME_ID= "DEINE_USER_ID"
 
-
+jokes = ["PLAULE", "MC FLAULE"]
 
 
 
@@ -26,7 +26,8 @@ async def on_ready():
 async def on_message(message):
     if message.content.lower().startswith('rülps'):
         await client.send_message(message.channel, "```SCHULZ```")
-
+    if message.content.lower().startswith('Joke'):
+        await client.send_message(message.channel, choice(jokes))
     if message.content.lower().startswith('blöd'):
         await client.send_message(message.channel, "```Miese Prise```")
     if message.content.lower().startswith('schade'):
@@ -46,24 +47,7 @@ async def on_message(message):
         await client.add_reaction(message, "🍻")
         await client.add_reaction(message, "💤")
         
-    if message.content.lower().startswith("!clear"):
-        mgs = [] 
 
-        async for x in Client.logs_from(message.channel, limit = 100):
-            mgs.append(x)
-        await Client.delete_messages(mgs)
-        await client.send_message(message.channel, "MESSAGES DELETED")
-     
-
-            
-    if message.author.name == "ryu#0857":
-        await client.add_reaction(message, "👍")
-        await client.add_reaction(message, "👎")
-        await client.add_reaction(message, "🔥")
-        await client.add_reaction(message, "🍺")
-        await client.add_reaction(message, "💤")
-
-   
     
   
     
