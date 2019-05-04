@@ -29,6 +29,8 @@ async def on_message(message):
         await client.send_message(message.channel, "```SCHULZ```")
     if message.content.lower().startswith('Joke'):
         await client.send_message(message.channel, random.choice(['win', 'lose', 'draw']))
+    if message.content.lower().startswith('blaul ist'):
+        await client.send_message(message.channel, random.choice(['||fett||', '||gay||', '||ein Ehrenmann||']))
     if message.content.lower().startswith('blöd'):
         await client.send_message(message.channel, "```Miese Prise```")
     if message.content.lower().startswith('schade'):
