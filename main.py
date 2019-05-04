@@ -28,7 +28,7 @@ async def on_message(message):
     if message.content.lower().startswith('rülps'):
         await client.send_message(message.channel, "```SCHULZ```")
     if message.content.lower().startswith('Joke'):
-        await client.send_message(message.channel, random.choice(['win', 'lose', 'draw']))
+        await client.send_message(message.channel, random.choice(['Staubsaugersuppe', 'Warum gibt es so wenig Frauenfußball. ||Ganz einfach: Frauen zu finden, die freiwillig das gleiche Kostüm anziehen, ist schwierig.||', 'Fragt die Ehefrau ihren Gatten: Was magst du mehr, meinen wunderschönen Körper oder meine überragende Intelligenz?Er, nach kurzer Überlegung: Eher deinen Sinn für Humor.']))
     if message.content.lower().startswith('blaul ist'):
         await client.send_message(message.channel, random.choice(['||fett||', '||gay||', '||ein Ehrenmann||']))
     if message.content.lower().startswith('blöd'):
