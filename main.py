@@ -56,7 +56,7 @@ async def on_message(message):
         await client.add_reaction(message, "🔥")
         await client.add_reaction(message, "🍻")
         await client.add_reaction(message, "💤")
-        await client.delete_message(message.channel, "<:robloxdab:478246358021701644>")
+
         
 
 
