@@ -50,6 +50,21 @@ async def on_message(message):
         await client.add_reaction(message, "🍻")
         await client.add_reaction(message, "💤")
         
+    if message.content.lower().startswith("<:robloxdab:478246358021701644>"):
+        await client.add_reaction(message, "👍")
+        await client.add_reaction(message, "👎")
+        await client.add_reaction(message, "🔥")
+        await client.add_reaction(message, "🍻")
+        await client.add_reaction(message, "💤")
+        await client.add_reaction(message, "<:robloxdab:478246358021701644>")
+        await client.add_reaction(message, "👍")
+        await client.add_reaction(message, "👎")
+        await client.add_reaction(message, "🔥")
+        await client.add_reaction(message, "🍻")
+        await client.add_reaction(message, "💤")
+        await client.add_reaction(message, "<:robloxdab:478246358021701644>")
+
+        
 
     
     
