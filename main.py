@@ -52,7 +52,25 @@ async def on_message(message):
         
 
     
-  
+    
+    if message.content.startswith('ulu'):
+        try:
+            userembed = discord.Embed(
+                title="Ululant",
+                description="ulu",
+                color=0xe67e22
+            )
+            userembed.set_author(
+                name="<:robloxdab:478246358021701644>"
+            )
+            userembed.add_field(
+                name="glockeler",
+                value="<:glockler:488739934933483520>"
+            )
+ 
+            await client.send_message(message.channel, embed=userembed)  
+
+
     
     if message.content.startswith('info'):
         try:
