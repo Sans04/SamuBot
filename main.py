@@ -56,13 +56,22 @@ async def on_message(message):
         await client.add_reaction(message, "🔥")
         await client.add_reaction(message, "🍻")
         await client.add_reaction(message, "💤")
-        await client.add_reaction(message, "478246358021701644")
         await client.remove_reaction(message, "👍")
         await client.remove_reaction(message, "👎")
         await client.remove_reaction(message, "🔥")
         await client.remove_reaction(message, "🍻")
         await client.remove_reaction(message, "💤")
-        await client.add_reaction(message, "478246358021701644")
+        await client.add_reaction(message, "👍")
+        await client.add_reaction(message, "👎")
+        await client.add_reaction(message, "🔥")
+        await client.add_reaction(message, "🍻")
+        await client.add_reaction(message, "💤")
+        await client.remove_reaction(message, "👍")
+        await client.remove_reaction(message, "👎")
+        await client.remove_reaction(message, "🔥")
+        await client.remove_reaction(message, "🍻")
+        await client.remove_reaction(message, "💤")
+        
 
 
         
